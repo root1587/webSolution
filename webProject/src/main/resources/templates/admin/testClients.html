@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Test Clients</title>
+</head>
+<body>
+	<form th:action="@{clients}" th:object="${clientVo}" method="post">
+		<table>
+			<tbody>
+				<tr>
+					<td>고객</td>
+					<td><input type="text" th:field="*{client}"></td>
+				</tr>
+				<tr>
+					<td>로고</td>
+					<td><input type="text" th:field="*{logoPath}"></td>
+				</tr>
+			</tbody>
+			<button type="submit">고객 등록</button>
+		</table>
+	</form>
+	<div>
+		</p>
+		</p>
+		</p>
+		</p>
+	</div>
+	<h1>Client List Test</h1>
+	<table>
+		<tr>
+			<th>고객</th>
+			<th>로고</th>
+		</tr>
+		<tr th:each="client: ${clients}">
+			<td th:text="${client.client}"></td>
+	        <td th:text="${client.logoPath}"></td>
+		</tr>
+	</table>
+</body>
+</html>

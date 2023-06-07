@@ -1,0 +1,70 @@
+/*index*/
+
+.mainSlide{position: relative; margin: 0;}
+.mainSlide .slick-slide{padding: 230px 120px; background-repeat: no-repeat; background-size: cover; background-position: center; color: #fff;}
+.mainSlide .slick-slide{background-image: url(../images/main_banner_01.png);}
+/* .mainSlide .slick-slide:nth-child(3){background-image: url(../images/main_banner_01.png);}
+.mainSlide .slick-slide:nth-child(4){background-image: url(../images/main_banner_01.png);} */
+.mainSlide .slick-slide dl dt{margin-bottom: 35px; font-size: 44px; font-weight: 700;}
+.mainSlide .slick-slide dl dt span{border-bottom: 5px solid #dd0a35;}
+.mainSlide .slick-slide dl dd{font-size: 32px; font-weight: 500;}
+.mainSlide .slick-arrow{display: none !important;}
+.mainSlide .slick-dots{position: absolute; bottom: 30px;}
+.mainSlide .slick-dots li button{width: 10px; height: 10px; border: 1px solid #fff; border-radius: 100%; box-sizing: border-box;}
+.mainSlide .slick-dots li.slick-active button{background-color: #fff;}
+.slick-dots li button:before{display: none;}
+.slick-dotted.slick-slider{margin-bottom: 0;}
+
+.main > div:not(:first-of-type){padding: 70px 165px 0; text-align: center; box-sizing: border-box;}
+.main > div h4{position: relative; width: 280px; margin: 0 auto; padding-bottom: 20px; font-size: 35px; font-weight: 700; text-align: center; border-bottom: 1px solid #c1c1c1;}
+.main > div:not(:last-of-type) h4{margin-bottom: 55px;}
+.main > div:not(:first-of-type, :last-of-type){padding-bottom: 70px; box-sizing: border-box;}
+.main > div h4::after{content: ''; position: absolute; left: 115px; bottom: -5px; width: 50px; height: 10px; background-color: #dd0a35;}
+.main > div:nth-of-type(2) ul::after{content: ''; display: block; clear: both;}
+.main > div:nth-of-type(2) ul li{float: left; width: calc(100% / 3); padding: 0 30px; box-sizing: border-box;}
+.main > div:nth-of-type(2) ul li:not(:last-of-type){border-right: 1px solid #ddd;}
+.main > div:nth-of-type(2) ul li dt{height: 75px; margin-bottom: 10px;}
+.main > div:nth-of-type(2) ul li dt img{width: auto; height: 100%;}
+.main > div:nth-of-type(2) ul li dd{font-size: 14px; font-weight: 400; line-height: 16px;}
+.main > div:nth-of-type(3){background-color: #f1f1f1;}
+.main > div:nth-of-type(3) h4{border-color: #fff;}
+.main > div:nth-of-type(3) a{position: relative; display: inline-block; width: 350px; height: 350px; border-radius: 100%; font-size: 32px; color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center}
+.main > div:nth-of-type(3) a::before{opacity: 0; content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #000; border-radius: 100%;}
+.main > div:nth-of-type(3) a:hover::before{opacity: 0.6; transition: all 0.5s;}
+.main > div:nth-of-type(3) a:first-of-type{background-image: url(../images/sub_cont2_btn1.png); margin-right: 100px;}
+.main > div:nth-of-type(3) a:nth-of-type(2){background-image: url(../images/sub_cont2_btn2.png);}
+.main > div:nth-of-type(3) a span{position: absolute; top: 50%; left: 50%; opacity: 0; padding-bottom: 5px; border-bottom: 2px solid #fff; transform: translateX(-50%) translateY(-50%);}
+.main > div:nth-of-type(3) a:hover span{opacity: 1; transition: all 0.5s;}
+
+.main .subSlider_Container{background-image: url(../images/subSlider_bg.png); background-repeat: no-repeat; background-size: cover; background-position: center;}
+.main .subSlider_Container .subSlider{position: relative;}
+.main .subSlider_Container .subSlider .slick-list{min-height: 120px;}
+.main .subSlider_Container .subSlider li img{width: 100%;}
+.main .subSlider_Container .subSlider .slick-slide{width: 195px; margin: 0 55px; transform: translateY(25px);}
+.main .subSlider_Container .subSlider .slick-slide.slick-center{transform: scale(1.5) translateY(15px); transition: 0.5s;}
+.main .subSlider_Container .subSlider .slick-dots{position: absolute; bottom: -75px; padding-top: 40px; box-sizing: border-box;}
+.main .subSlider_Container .subSlider .slick-dots li button{width: 10px; height: 10px; background-color: #ddd; border-radius: 100%; box-sizing: border-box;}
+.main .subSlider_Container .subSlider .slick-dots li.slick-active button{background-color: #dd0a35;}
+.main .subSlider_Container .subSlider .slick-arrow{display: none !important;}
+
+.main > div:last-of-type h4{margin-bottom: 110px;}
+.main > div:last-of-type > div{padding-bottom: 110px;}
+.main > div:last-of-type > div::after{content: ''; display: block; clear: both;}
+.main > div:last-of-type > div div{float: left;}
+.main > div:last-of-type > div div{text-align: left; font-size: 32px; font-weight: 500;}
+.main > div:last-of-type > div div strong{font-size: 34px; color: #dd0a35;}
+.main > div:last-of-type > div div a{display: block; margin-top: 35px; font-size: 44px; font-weight: 700; color: #dd0a35;}
+.main > div:last-of-type > div ul{float: right; padding: 23px 0;}
+.main > div:last-of-type ul::after{content: ''; display: block; clear: both;}
+.main > div:last-of-type ul li{float: left; font-size: 30px; font-weight: 700; text-align: left;}
+.main > div:last-of-type ul li:not(:last-of-type){margin-right: 110px;}
+.main > div:last-of-type ul li:first-of-type{max-width: 320px;}
+.main > div:last-of-type ul li strong{display: block; margin-bottom: 20px; padding-left: 35px; background-repeat: no-repeat; background-size: 25px; background-position: 0 5px;}
+.main > div:last-of-type ul li:first-of-type strong{background-image: url(../images/adress_icon.png);}
+.main > div:last-of-type ul li:nth-of-type(2) strong{background-image: url(../images/contact_icon.png);}
+.main > div:last-of-type ul li:nth-of-type(3) strong{background-image: url(../images/etc_icon.png);}
+.main > div:last-of-type ul li address, .main > div:last-of-type ul li span{display: block; font-size: 22px; font-weight: 400;}
+.main > div:last-of-type ul li span:nth-of-type(2){padding-top: 10px;}
+.main > div:last-of-type ul li span a{color: #333;}
+
+/*index fin*/

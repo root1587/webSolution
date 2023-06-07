@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>admin Login test</h1>
+	
+	<form class="m-t" role="form" th:action="@{/admin/login}"
+		th:object="${adminLoginVo}" action="#" id="loginFrom" method="post">
+		<div>
+			<span>id</span>
+			<input type="text" th:field="*{id}" name="adminId" id="adminId"/>
+		</div>
+		<div>
+			<span>name</span>
+			<input type="text" th:field="*{name}" name="adminName" id="adminName"/>
+		</div>
+		<div>
+			<span>password</span>
+			<input type="password" th:field="*{pw}" name="adminPw" id="adminPw"/>
+		</div>
+		<div>
+			<span>Auth</span>
+			<input type="text" th:field="*{authKey}" name="auth" id="auth"/>
+		</div>
+		
+		<div>
+			<button type="submit">확인</button>
+		</div>
+	</form>
+</body>
+</html>
