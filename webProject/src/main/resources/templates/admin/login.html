@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="admin/layoutAcc/default_layout">
+      
+<th:block layout:fragment="content">
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Admin Login</h1>
+                                    </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="adminId" aria-describedby="idHelp"
+                                                placeholder="Enter id...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="adminPw" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+                                        <a href="#" onclick="return chk_form()" class="btn btn-primary btn-user btn-block">
+                                            Login
+                                        </a>
+                                        <hr>
+                                      <!--   <a href="index.html" class="btn btn-google btn-user btn-block">
+                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                        </a>
+                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                        </a> -->
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="register.html">Create an Account!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script>
+		function chk_form() {
+			if(document.getElementById("adminId").value==''){
+				alert("아이디를 입력해주십시오.");
+				return false;
+			}
+			if(document.getElementById("adminPw").value==''){
+				alert("비밀번호를 입력해주십시오.");
+				return false;
+			}
+			
+		    $.ajax({
+		        type: "post",
+		        url: "/admin/login",
+		        data: {"id" : $("#adminId").val(),
+		        	   "pw" : $("#adminPw").val() 
+		        	   },
+		        success: function (res) {
+		        	//실패로직 추가필요 (DB부터 연결해두고 해야함)
+		        	console.log(res)
+		        	if(res != null){
+		        		window.localStorage.setItem("Bearer", res);
+		        		
+		        		var token = localStorage.getItem("Bearer");
+	        		    
+		        		try{
+		        			console.log("in")
+			        		$.ajax({
+		        		        type: "GET",
+		        		        url: "/admin",
+		        		        beforeSend: function (xhr) {
+		        		            xhr.setRequestHeader("Content-type","application/json");
+		        		            xhr.setRequestHeader("Authorization","Bearer " + token);
+		        		        },
+		        		        success: function (res) {
+		        		            console.log("SUCCESS");
+		        		            window.location.replace('/admin')
+		        		        }
+		        		    });
+		        		} catch(e){
+		        			console.log("ERROR")
+		        		}
+		        	}
+		        }
+		    });
+		    
+	
+			//document.getElementById('loginFrom').submit();
+		}
+	</script>
+</th:block>
+</html>
