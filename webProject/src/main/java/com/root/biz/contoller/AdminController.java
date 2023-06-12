@@ -26,7 +26,9 @@ import com.root.biz.jwt.TokenProvider;
 import com.root.biz.service.AdminService;
 import com.root.biz.vo.AdminLoginVo;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 
@@ -48,6 +50,12 @@ public class AdminController {
 		return "/admin/login.html";
 	}
 	
+	@PostMapping("admin")
+	public void logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Cookie cookie = new Cookie("login_cookie", null); // 삭제할 쿠키에 대한 값을 null로 지정
+    	cookie.setMaxAge(0); // 유효시간을 0으로 설정해서 바로 만료시킨다.
+    	response.addCookie(cookie); // 응답에 추가해서 없어지도록 함
+	}
 	
 	//@RequestMapping(value = "admin", method = RequestMethod.GET)
 	@RequestMapping("admin")

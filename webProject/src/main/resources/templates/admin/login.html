@@ -85,7 +85,7 @@
 		        	   },
 		        success: function (res) {
 		        	//실패로직 추가필요 (DB부터 연결해두고 해야함)
-		        	console.log(res)
+		        	//console.log(res)
 		        	if(res != null){
 		        		window.localStorage.setItem("Bearer", res);
 		        		
@@ -96,12 +96,12 @@
 			        		$.ajax({
 		        		        type: "GET",
 		        		        url: "/admin",
-		        		        beforeSend: function (xhr) {
+		        		       /* ajax의 비동기 처리방식으로 인한 request 전달 후 리다이렉트 문제로 인해 주석처리*/
+		        		       /*  beforeSend: function (xhr) {
 		        		            xhr.setRequestHeader("Content-type","application/json");
 		        		            xhr.setRequestHeader("Authorization","Bearer " + token);
-		        		        },
+		        		        }, */
 		        		        success: function (res) {
-		        		            console.log("SUCCESS");
 		        		            window.location.replace('/admin')
 		        		        }
 		        		    });

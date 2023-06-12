@@ -24,7 +24,7 @@ public class SecurityConfig {
 
     // TokenProvider,JwtAuthenticationEntryPoint,JwtAccessDeniedHandler 의존성 주입
     public SecurityConfig(
-            TokenProvider tokenProvider,
+            TokenProvider tokenProvider,	
             JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
             JwtAccessDeniedHandler jwtAccessDeniedHandler
     ){
@@ -62,8 +62,9 @@ public class SecurityConfig {
 
         http
                 // 토큰을 사용하기 때문에 csrf 설정 disable
+        		// 헤더 -> 쿠키로 변경하였으므로 어떻게 보안 처리할지 고민.. 
                 .csrf().disable()
-
+      
                 // 예외 처리 시 직접 만들었던 클래스 추가
                 .exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)

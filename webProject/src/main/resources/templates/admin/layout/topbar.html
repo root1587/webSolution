@@ -194,7 +194,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" onclick="return logOut()" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -205,5 +205,18 @@
 
                 </nav>
                 <!-- End of Topbar -->
+
+	<script>
+		function logOut(){			
+			$.ajax({
+		        type: "post",
+		        url: "/admin",
+		        success: function (res) {
+		        	window.location.replace('/admin/login')
+		        }
+		    });
+		}
+	</script>
 </th:block>
+
 </html>

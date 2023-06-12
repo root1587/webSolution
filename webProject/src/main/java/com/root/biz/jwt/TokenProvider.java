@@ -15,7 +15,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Key;
 import java.util.Arrays;
@@ -66,7 +65,7 @@ public class TokenProvider implements InitializingBean {
      // 토큰 만료 시간 설정
      long now = (new Date()).getTime();
      Date validity = new Date(now + this.tokenValidityInMilliseconds);
-
+     
      return Jwts.builder()
              .setSubject(authentication.getName())
              .claim(AUTHORITIES_KEY,authorities)
@@ -74,6 +73,7 @@ public class TokenProvider implements InitializingBean {
              .setExpiration(validity)
              .compact();
  }
+ 
 
  // 토큰에 담겨있는 정보를 이용해 Authentication 객체 리턴
  public Authentication getAuthentication(String token){
@@ -100,7 +100,7 @@ public class TokenProvider implements InitializingBean {
      // 최종적으로 Authentication 객체 리턴
      return new UsernamePasswordAuthenticationToken(principal, token, authorities);
  }
-
+ 
  // 토큰의 유효성 검증 수행
  public boolean validateToken(String token){
 
