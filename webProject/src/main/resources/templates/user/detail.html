@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<!-- 공통으로 쓰이는 script파일을넣는다.-->
+<th:block th:fragment="detailFragment">
+	<th:block th:replace="~{user/detail/portfolioModal1:: portfolioModal1}"></th:block>
+	<th:block th:replace="~{user/detail/portfolioModal2:: portfolioModal2}"></th:block>
+	<th:block th:replace="~{user/detail/portfolioModal3:: portfolioModal3}"></th:block>
+	<th:block th:replace="~{user/detail/portfolioModal4:: portfolioModal4}"></th:block>
+	<th:block th:replace="~{user/detail/portfolioModal5:: portfolioModal5}"></th:block>
+	<th:block th:replace="~{user/detail/portfolioModal6:: portfolioModal6}"></th:block>
+</th:block>
+</html>

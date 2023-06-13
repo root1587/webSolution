@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:fragment="footerFragment">
-    <footer>
-        <div>
-            <h2>
-                <a href="index.html"><img src="images/footer_logo.png" alt="해올정보주식회사 로고"></a>
-            </h2>
-    
-            <div>
-                <address>서울시 서초구 서초중앙로 41, 10층 (서초동, 대성빌딩)</address> 대표전화: <a href="tel:+8202525-5551">02&#41;525-5551</a> FAX : 02&#41;525-5846
-                <span>Copyright © 1994-2017 HAEOL CO,LTD. All Rights Reserved</span>
+    <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <a href="">로그인</a>
-    </footer>
+        </footer>
 </th:block>
 </html>

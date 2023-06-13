@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="error/layout/default_layout">
+<th:block layout:fragment="content">
+	<!-- Begin Page Content -->
+		<div class="container-fluid">
+			<!-- 401 Error Text -->
+			<div class="text-center">
+				<div class="error mx-auto" data-text="401">401</div>
+				<p class="lead text-gray-800 mb-5">Authentication error</p>
+				<p class="text-gray-500 mb-0">It looks like you found a glitch the Authentication...</p>
+				 <a href="/">&larr; Back to home</a>
+			</div>
+		</div>
+</th:block>
+</html>

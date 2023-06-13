@@ -19,11 +19,10 @@
 			        <!-- 본문-->
 			        <th:block layout:fragment="content"></th:block>
 	        	</div>
+	        	
+	        	<!-- 공통 하단-->
+	        	<th:block th:replace="admin/layout/footer :: footerFragment"></th:block>
 	        </div>
-	        
-	        <!-- 공통 하단-->
-	        <th:block th:replace="admin/layout/footer :: footerFragment"></th:block>
-	
 	        <!-- 공통 스크립트-->
 	        <th:block th:replace="admin/layout/script :: scriptFragment"></th:block>
        	</div>

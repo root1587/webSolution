@@ -50,7 +50,7 @@ public class AdminController {
 		return "/admin/login.html";
 	}
 	
-	@PostMapping("admin")
+	@PostMapping("/admin")
 	public void logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Cookie cookie = new Cookie("login_cookie", null); // 삭제할 쿠키에 대한 값을 null로 지정
     	cookie.setMaxAge(0); // 유효시간을 0으로 설정해서 바로 만료시킨다.
@@ -58,10 +58,9 @@ public class AdminController {
 	}
 	
 	//@RequestMapping(value = "admin", method = RequestMethod.GET)
-	@RequestMapping("admin")
+	@RequestMapping("/admin")
 	public String admin(HttpServletRequest request) throws Exception {
 		return "/admin/board.html";
 	}
-	
 
 }

@@ -51,7 +51,8 @@ public class SecurityConfig {
                 .requestMatchers("/vendor/**")
                 .requestMatchers("favicon.ico")
                 .requestMatchers("/resources/**")
-                .requestMatchers("/error")
+                .requestMatchers("/error/**")
+                .requestMatchers("/401")
         
         		//임시
                 .requestMatchers("/admin/login");

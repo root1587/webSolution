@@ -8,6 +8,8 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.log4j.Log4j2;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
@@ -15,9 +17,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 
+import com.root.biz.contoller.AuthController;
+
 import java.io.IOException;
 import java.util.Arrays;
 
+@Log4j2
 public class JwtFilter extends GenericFilterBean {
 
  private static final Logger logger = LoggerFactory.getLogger(TokenProvider.class);
@@ -61,17 +66,23 @@ public class JwtFilter extends GenericFilterBean {
  // Request Header에서 토큰 정보를 꺼내오기
  private String resolveToken(HttpServletRequest request){
      //String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
-	 String bearerToken = Arrays.stream(request.getCookies())
-             .filter(cookie -> cookie.getName().equals(COOKIE_NAME))
-             .findFirst().map(Cookie::getValue)
-             .orElse("dummy");
 	 
-     if(StringUtils.hasText(bearerToken)){ //&& bearerToken.startsWith("Bearer ")
-
-         System.out.println("token : " + bearerToken);
-
-         return bearerToken;//.substring(7);
-     }
-     return null;
+	 try {
+		 String bearerToken = Arrays.stream(request.getCookies())
+	             .filter(cookie -> cookie.getName().equals(COOKIE_NAME))
+	             .findFirst().map(Cookie::getValue)
+	             .orElse("dummy");
+		 
+	     if(StringUtils.hasText(bearerToken)){ //&& bearerToken.startsWith("Bearer ")
+	
+	         log.info("token : " + bearerToken);
+	
+	         return bearerToken;//.substring(7);
+	     }
+	 } catch(Exception e) {
+		 log.info("URL : not Found");
+		 return null;
+	 }
+	return null;
  }
 }

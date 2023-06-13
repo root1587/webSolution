@@ -14,10 +14,4 @@ public class UserController {
 	public String mainIndex() {
 		return "/user/index.html";
 	}
-	
-	@RequestMapping("/layout")
-	public String layout() {
-		
-		return "user/board.html";
-	}
 }
