@@ -14,31 +14,55 @@
 
 @media (min-width: 540px){
 	.introText {
-	/* overflow: hidden; */
-	width: 57%;
-	word-break: break-all;
-	font-family: 'Noto Sans KR', sans-serif;
+		/* overflow: hidden; */
+		width: 57%;
+		word-break: break-all;
+		font-family: 'Noto Sans KR', sans-serif;
 	}
+	
+	.modal-ability{
+		/* 랜더링 이슈 */
+		position: fixed;	
+	 	top: -1%;
+	  	left: 15%;
+	  	/*
+	  	transition-delay: delay;
+	  	transform: translate(-50%, -50%); */ 
+	  	font-family: 'Noto Sans KR', sans-serif;
+	  	width:70%;
 }
 
 @media (max-width: 541px){
 	.introText {
-	/* overflow: hidden; */
-	width: 100%;
-	word-break: break-all;
-	font-family: 'Noto Sans KR', sans-serif;
+		/* overflow: hidden; */
+		width: 100%;
+		word-break: break-all;
+		font-family: 'Noto Sans KR', sans-serif;
 	}
+ }
 }
 
-/* .introText {
-	overflow: hidden;
-	width: 55%;
+.text-uppercase{
 	word-break: break-all;
-	font-family: 'Noto Sans KR', sans-serif;
 }
- */
-/* .introText{
-	ovText erflow: hidden;
-	width: 60%;
-	white-space: normal;
-} */
+
+.svg-inline--fa.fa-stack-2x > path{
+	color:#52A6FF;
+}
+
+.badge{display:inline-block;padding:.25em .4em;font-size:75%;font-weight:700;line-height:1;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25rem}.badge:empty{display:none}.btn .badge{position:relative;top:-1px}.badge-pill{padding-right:.6em;padding-left:.6em;border-radius:10rem}.badge-primary{color:#fff;background-color:#007bff}.badge-primary[href]:focus,.badge-primary[href]:hover{color:#fff;text-decoration:none;background-color:#0062cc}.badge-secondary{color:#fff;background-color:#6c757d}.badge-secondary[href]:focus,.badge-secondary[href]:hover{color:#fff;text-decoration:none;background-color:#545b62}.badge-success{color:#fff;background-color:#28a745}.badge-success[href]:focus,.badge-success[href]:hover{color:#fff;text-decoration:none;background-color:#1e7e34}.badge-info{color:#fff;background-color:#17a2b8}.badge-info[href]:focus,.badge-info[href]:hover{color:#fff;text-decoration:none;background-color:#117a8b}.badge-warning{color:#212529;background-color:#ffc107}.badge-warning[href]:focus,.badge-warning[href]:hover{color:#212529;text-decoration:none;background-color:#d39e00}.badge-danger{color:#fff;background-color:#dc3545}.badge-danger[href]:focus,.badge-danger[href]:hover{color:#fff;text-decoration:none;background-color:#bd2130}.badge-light{color:#212529;background-color:#f8f9fa}.badge-light[href]:focus,.badge-light[href]:hover{color:#212529;text-decoration:none;background-color:#dae0e5}.badge-dark{color:#fff;background-color:#343a40}.badge-dark[href]:focus,.badge-dark[href]:hover{color:#fff;text-decoration:none;background-color:#1d2124}
+.badge {
+	padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+}
+
+.col-sm-12{
+	vertical-align:left;
+	text-align:left;
+	}
+	
+.col-lg-custom {
+    flex: 0 0 auto;
+    width: 80%;
+  }
