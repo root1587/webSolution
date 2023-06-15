@@ -66,3 +66,13 @@
     flex: 0 0 auto;
     width: 80%;
   }
+  
+.portfolio-link {
+	border-color: #E5E5E5;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.subheading{
+	font-style: italic;
+}
